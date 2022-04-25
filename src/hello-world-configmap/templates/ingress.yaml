@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-world.part6.xyz-rules
+  annotations:
+    kubernetes.io/tls-acme: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: hello-world.part6.xyz
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hello-world-configmap
+            port:
+                number: 80
+  tls:
+  - secretName: hello-world.part6.xyz-tls
+    hosts:
+    - hello-world.part6.xyz
