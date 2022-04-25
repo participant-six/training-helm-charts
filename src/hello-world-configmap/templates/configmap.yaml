@@ -1,6 +1,7 @@
+content: "hello world"
 apiVersion: v1
 data:
-  helloworld: Part6 - my message
+  helloworld: {{ .app.content }}
 kind: ConfigMap
 metadata:
   name: hello-world

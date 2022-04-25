@@ -20,7 +20,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: PORT
-          value: "80"
+          value: "{{ .app.port }}"
         - name: HELLOWORLD
           valueFrom:
             configMapKeyRef:
