@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-world-configmap
-        image: "enabledocker/hello-world-configmap:1.0"
+        image: "enabledocker/hello-world-configmap:{{ .image.tag }}"
         imagePullPolicy: Always
         env:
         - name: PORT
