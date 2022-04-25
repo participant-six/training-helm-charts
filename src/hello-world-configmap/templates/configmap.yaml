@@ -1,7 +1,6 @@
-content: "hello world"
 apiVersion: v1
 data:
-  helloworld: {{ .app.content }}
+  helloworld: {{ .Values.app.content }}
 kind: ConfigMap
 metadata:
   name: hello-world

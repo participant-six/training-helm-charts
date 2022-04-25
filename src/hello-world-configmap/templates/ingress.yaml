@@ -18,9 +18,9 @@ spec:
           service:
             name: hello-world-configmap
             port:
-                number: {{ .app.port }}
+                number: {{ .Values.app.port }}
   tls:
   - secretName: hello-world.part6.xyz-tls
     hosts:
-    - hello-world.part6.xyz
+    - {{ .Values.ingress.host }}
 {{- end }}
